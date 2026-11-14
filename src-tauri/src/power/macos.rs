@@ -30,7 +30,7 @@ impl PowerBackend for PowerRequest {
                 } else {
                     "PreventUserIdleDisplaySleep"
                 });
-                let reason = CFString::new("Caffeine: user enabled wake prevention");
+                let reason = CFString::new("Hot Coffee: user enabled wake prevention");
                 let mut id = 0;
                 // Both strings stay alive through the synchronous call. IOKit copies the properties.
                 let result = unsafe {

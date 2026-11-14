@@ -45,8 +45,8 @@ fi
 
 npm run tauri -- build --target aarch64-apple-darwin --bundles app --no-sign --ci \
   --config src-tauri/tauri.appstore.conf.json -- --locked
-app="$stage/Caffeine.app"
-ditto "$CARGO_TARGET_DIR/aarch64-apple-darwin/release/bundle/macos/Caffeine.app" "$app"
+app="$stage/Hot Coffee.app"
+ditto "$CARGO_TARGET_DIR/aarch64-apple-darwin/release/bundle/macos/Hot Coffee.app" "$app"
 test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app/Contents/Info.plist")" = "$identifier"
 test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$app/Contents/Info.plist")" = "$version"
 
@@ -66,11 +66,11 @@ codesign --force --sign "$identity" "$signing_time" --options runtime --entitlem
 bash scripts/check-macos-bundle.sh "$app" --sandbox
 
 if [[ "$mode" = --local ]]; then
-  "$app/Contents/MacOS/caffeine" --self-test
-  rm -rf "$output/sandbox/Caffeine.app"
+  "$app/Contents/MacOS/hot-coffee" --self-test
+  rm -rf "$output/sandbox/Hot Coffee.app"
   mkdir -p "$output/sandbox"
-  mv "$app" "$output/sandbox/Caffeine.app"
-  printf 'Local sandbox build: %s\n' "$output/sandbox/Caffeine.app"
+  mv "$app" "$output/sandbox/Hot Coffee.app"
+  printf 'Local sandbox build: %s\n' "$output/sandbox/Hot Coffee.app"
 else
   signature=$(codesign -dvv "$app" 2>&1)
   test "$(printf '%s\n' "$signature" | sed -n 's/^TeamIdentifier=//p')" = "$team"
@@ -78,7 +78,7 @@ else
     echo 'The app must use a Mac App Store distribution signing identity.' >&2
     exit 1
   fi
-  package="Caffeine_${version}_macos_appstore_arm64.pkg"
+  package="Hot_Coffee_${version}_macos_appstore_arm64.pkg"
   xcrun productbuild --sign "$installer" --component "$app" /Applications "$stage/$package"
   pkgutil --check-signature "$stage/$package"
   mv -f "$stage/$package" "$output/$package"

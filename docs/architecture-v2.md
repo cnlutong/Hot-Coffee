@@ -1,4 +1,12 @@
-# Caffeine 2.0
+# Hot Coffee 2.0
+
+## Product name and upgrade identity
+
+The product is named **Hot Coffee** (previously Caffeine). The npm/Rust package and native binary are `hot-coffee`; the Rust library is `hot_coffee_lib`. macOS bundles are `Hot Coffee.app`, and release workflow assets start with `Hot_Coffee_`.
+
+Keep `com.cnlutong.caffeine`: it identifies the existing application, preference directory, and single-instance coordination on both platforms. The legacy MSIX identity `TongLu.Caffeine-Windows`, its `Caffeine` entry-point ID, and the 1.x Windows mutex also remain stable. These are compatibility identifiers, not user-facing names. The repository is now `cnlutong/Hot-Coffee`; previous repository URLs redirect to it. Historical release asset filenames remain unchanged.
+
+The Windows NSIS preinstall hook recognizes the previous Caffeine installation by its publisher and executable, runs its uninstaller in update mode to retain preferences, and removes only shortcuts targeting that old executable. The new installation is registered as Hot Coffee. The Windows CI job installs the published Caffeine 2.0.1 fixture, upgrades to the new installer, and checks native power APIs, retained preferences, and shortcut migration.
 
 Targets are Windows x86_64 (`x86_64-pc-windows-msvc`) and macOS ARM64 (`aarch64-apple-darwin`). Other architectures are rejected by the Rust platform module.
 
@@ -34,6 +42,6 @@ The GitHub Actions workflow builds and tests each native target on its own OS. I
 
 ## Validation
 
-Unit tests exercise failed-mode rollback, toggle restoration, duplicate requests, safe restart, corrupt preferences and replacement saves. `caffeine --self-test` briefly creates, switches and releases actual native requests, exits with a failure status on API errors and does not start the tray or change saved preferences.
+Unit tests exercise failed-mode rollback, toggle restoration, duplicate requests, safe restart, corrupt preferences and replacement saves. `hot-coffee --self-test` briefly creates, switches and releases actual native requests, exits with a failure status on API errors and does not start the tray or change saved preferences.
 
 Before publishing, validate native tray clicks, settings synchronization, window close/reopen, process termination cleanup, real display/system idle timeouts, manual sleep and wake, lock, external display, AC and battery behavior. Windows and macOS must be exercised separately; compiling a target does not establish those runtime behaviors.

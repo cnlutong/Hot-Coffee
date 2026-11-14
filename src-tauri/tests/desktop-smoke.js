@@ -9,7 +9,7 @@
   };
   try {
     await wait(() => document.querySelector('fieldset') && !document.querySelector('fieldset').disabled, 'React panel and event subscription');
-    if (document.querySelector('h1').textContent !== 'Caffeine') throw new Error('Wrong page');
+    if (document.querySelector('h1').textContent !== 'Hot Coffee') throw new Error('Wrong page');
     const initial = await invoke('get_state');
     if (await invoke('smoke_reopening')) {
       if (initial.mode !== 'display') throw new Error('Closing the window lost the native mode');

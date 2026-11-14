@@ -3,7 +3,7 @@ using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-namespace Caffeine.Windows;
+namespace HotCoffee.Windows;
 
 internal enum AwakeMode
 {
@@ -30,10 +30,11 @@ internal static class Program
 
         ApplicationConfiguration.Initialize();
 
+        // Keep the original mutex so a renamed build cannot run beside the old 1.x app.
         using var mutex = new Mutex(true, @"Local\Caffeine.Windows.43E867D2", out var firstInstance);
         if (!firstInstance)
         {
-            MessageBox.Show(UiText.AlreadyRunning, "Caffeine",
+            MessageBox.Show(UiText.AlreadyRunning, "Hot Coffee",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return 0;
         }
@@ -125,7 +126,7 @@ internal sealed class TrayApplicationContext : ApplicationContext
         }
         catch (Exception exception)
         {
-            MessageBox.Show($"{UiText.ChangePowerFailed}\n\n{exception.Message}", "Caffeine",
+            MessageBox.Show($"{UiText.ChangePowerFailed}\n\n{exception.Message}", "Hot Coffee",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
@@ -244,19 +245,19 @@ internal static class UiText
     private static bool Chinese => UsesChinese(CultureInfo.CurrentUICulture);
 
     internal static string AlreadyRunning => Chinese
-        ? "Caffeine 已在运行，请查看任务栏通知区域。"
-        : "Caffeine is already running. Check the notification area.";
+        ? "Hot Coffee 已在运行，请查看任务栏通知区域。"
+        : "Hot Coffee is already running. Check the notification area.";
     internal static string Off => Chinese ? "关闭" : "Off";
     internal static string PreventSleep => Chinese ? "仅防止电脑休眠" : "Prevent sleep";
     internal static string KeepDisplayOn => Chinese ? "防止休眠并保持屏幕开启" : "Prevent sleep and keep display on";
     internal static string Exit => Chinese ? "退出" : "Exit";
-    internal static string TrayOff => Chinese ? "Caffeine：已关闭" : "Caffeine: off";
+    internal static string TrayOff => Chinese ? "Hot Coffee：已关闭" : "Hot Coffee: off";
     internal static string TrayPreventSleep => Chinese
-        ? "Caffeine：正在防止电脑休眠"
-        : "Caffeine: preventing sleep";
+        ? "Hot Coffee：正在防止电脑休眠"
+        : "Hot Coffee: preventing sleep";
     internal static string TrayKeepDisplayOn => Chinese
-        ? "Caffeine：正在防止休眠并保持屏幕开启"
-        : "Caffeine: preventing sleep and keeping display on";
+        ? "Hot Coffee：正在防止休眠并保持屏幕开启"
+        : "Hot Coffee: preventing sleep and keeping display on";
     internal static string ChangePowerFailed => Chinese ? "无法更改电源状态。" : "Unable to change the power state.";
     internal static string NativeCallFailed => Chinese
         ? "SetThreadExecutionState 调用失败。"

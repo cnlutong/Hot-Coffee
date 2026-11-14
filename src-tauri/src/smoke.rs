@@ -74,7 +74,7 @@ pub fn smoke_checkpoint(app: AppHandle) -> Result<(), String> {
         let owner = format!("pid {}(", std::process::id());
         let owned: Vec<_> = text
             .lines()
-            .filter(|line| line.contains(&owner) && line.contains("Caffeine: user enabled"))
+            .filter(|line| line.contains(&owner) && line.contains("Hot Coffee: user enabled"))
             .collect();
         let expected = match runtime.controller.mode {
             super::Mode::Off => None,

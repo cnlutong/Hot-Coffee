@@ -95,7 +95,9 @@ export default function App() {
         <div className="brand">
           <Icon name="coffee" size={34} />
           <div>
-            <h1 title={`Caffeine ${snapshot?.version ?? version}`}>Caffeine</h1>
+            <h1 title={`Hot Coffee ${snapshot?.version ?? version}`}>
+              Hot Coffee
+            </h1>
             <p
               className={`status status-${snapshot?.mode ?? "off"}`}
               role="status"
@@ -187,7 +189,9 @@ export default function App() {
             className="privacy"
             onClick={() => {
               setPrivacyError(false);
-              void bridge.openPrivacyPolicy().catch(() => setPrivacyError(true));
+              void bridge
+                .openPrivacyPolicy()
+                .catch(() => setPrivacyError(true));
             }}
           >
             {text.privacy}

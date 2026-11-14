@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const cli = join(root, "node_modules/@tauri-apps/cli/tauri.js");
 const icons = join(root, "src-tauri/icons");
-const stage = mkdtempSync(join(tmpdir(), "caffeine-icons-"));
+const stage = mkdtempSync(join(tmpdir(), "hot-coffee-icons-"));
 try {
   if (!process.argv.includes("--tray-only")) {
     execFileSync(

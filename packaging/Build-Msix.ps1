@@ -4,7 +4,7 @@ param([string]$MakeAppxPath = 'makeappx.exe')
 $ErrorActionPreference = 'Stop'
 $makeAppx = (Get-Command $MakeAppxPath -CommandType Application -ErrorAction Stop).Source
 $repoRoot = Split-Path $PSScriptRoot -Parent
-$projectPath = Join-Path $repoRoot 'source\Caffeine.csproj'
+$projectPath = Join-Path $repoRoot 'source\HotCoffee.csproj'
 [xml]$project = Get-Content -LiteralPath $projectPath -Raw
 [xml]$manifest = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'AppxManifest.xml') -Raw
 $manifest.Package.Identity.Version = "$($project.Project.PropertyGroup.Version).0"
@@ -12,7 +12,7 @@ $version = $manifest.Package.Identity.Version
 $outputRoot = [IO.Path]::GetFullPath((Join-Path $repoRoot 'artifacts\msix'))
 $stage = Join-Path $outputRoot ('build-' + [guid]::NewGuid().ToString('N'))
 $payload = Join-Path $stage 'payload'
-$packagePath = Join-Path $outputRoot "Caffeine-Windows_${version}_x64.msix"
+$packagePath = Join-Path $outputRoot "Hot_Coffee_${version}_x64.msix"
 New-Item -ItemType Directory -Path $payload -Force | Out-Null
 
 try {
@@ -22,7 +22,7 @@ try {
     $manifest.Save((Join-Path $payload 'AppxManifest.xml'))
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Assets') -Destination $payload -Recurse
     Copy-Item -LiteralPath (Join-Path $repoRoot 'LICENSE') -Destination $payload
-    $builtPackage = Join-Path $stage 'Caffeine.msix'
+    $builtPackage = Join-Path $stage 'Hot_Coffee.msix'
     & $makeAppx pack /d $payload /p $builtPackage /h SHA256 /o
     if ($LASTEXITCODE -ne 0) { throw 'MSIX packaging or manifest validation failed.' }
 
@@ -35,9 +35,9 @@ try {
         $packedManifest.Package.Properties.PublisherDisplayName -ne 'Tong Lu') {
         throw 'Packaged identity does not match the Store identity.'
     }
-    $packedExe = Join-Path $unpacked 'App\Caffeine.exe'
+    $packedExe = Join-Path $unpacked 'App\HotCoffee.exe'
     if ((Get-FileHash -LiteralPath $packedExe).Hash -ne
-        (Get-FileHash -LiteralPath (Join-Path $payload 'App\Caffeine.exe')).Hash) {
+        (Get-FileHash -LiteralPath (Join-Path $payload 'App\HotCoffee.exe')).Hash) {
         throw 'Packaged executable does not match the build.'
     }
     $test = Start-Process -FilePath $packedExe -ArgumentList '--self-test' -Wait -PassThru -WindowStyle Hidden

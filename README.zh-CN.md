@@ -1,21 +1,29 @@
-# Caffeine 2.0.1
+# Hot Coffee 2.0.2
 
 [English](README.md) | 简体中文
 
 适用于 **Windows 和 macOS** 的轻量防休眠工具，基于 **Tauri 2 + React + TypeScript + Rust**。
 
-## 下载 2.0.1
+**Hot Coffee** 是 **Caffeine** 的新名称，2.0.2 是首个使用新名称的版本。[原 Caffeine 2.0.1 发布](https://github.com/cnlutong/Hot-Coffee/releases/tag/v2.0.1)及其原始安装包仍保留。
 
-| 平台           | 系统要求                                   | v2.0.1 下载                                                                                                                             |
+## 下载 2.0.2
+
+| 平台           | 系统要求                                   | v2.0.2 下载                                                                                                                             |
 | -------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows x86_64 | 64 位 Windows 10 / 11，Intel 或 AMD 处理器 | [Windows 安装包（.exe）](https://github.com/cnlutong/Caffeine-Windows/releases/download/v2.0.1/Caffeine_2.0.1_windows_x86_64_setup.exe) |
-| macOS ARM64    | macOS 11 或更新版本，Apple Silicon 芯片    | [Mac 安装镜像（.dmg）](https://github.com/cnlutong/Caffeine-Windows/releases/download/v2.0.1/Caffeine_2.0.1_macos_arm64.dmg)            |
+| Windows x86_64 | 64 位 Windows 10 / 11，Intel 或 AMD 处理器 | [Windows 安装包（.exe）](https://github.com/cnlutong/Hot-Coffee/releases/download/v2.0.2/Hot_Coffee_2.0.2_windows_x86_64_setup.exe) |
+| macOS ARM64    | macOS 11 或更新版本，Apple Silicon 芯片    | [Mac 安装镜像（.dmg）](https://github.com/cnlutong/Hot-Coffee/releases/download/v2.0.2/Hot_Coffee_2.0.2_macos_arm64.dmg)            |
 
-[版本说明](https://github.com/cnlutong/Caffeine-Windows/releases/tag/v2.0.1) · [SHA-256 校验和](https://github.com/cnlutong/Caffeine-Windows/releases/download/v2.0.1/SHA256SUMS.txt) · [全部版本](https://github.com/cnlutong/Caffeine-Windows/releases)
+[版本说明](https://github.com/cnlutong/Hot-Coffee/releases/tag/v2.0.2) · [SHA-256 校验和](https://github.com/cnlutong/Hot-Coffee/releases/download/v2.0.2/SHA256SUMS.txt) · [全部版本](https://github.com/cnlutong/Hot-Coffee/releases)
 
 2.0 仅提供上述两种架构，暂不提供 Windows ARM64、32 位 Windows 或 Intel Mac 安装包。
 
-在 macOS 上再次打开 Caffeine 会显示已有实例的设置窗口。中英文设置面板均新增「隐私政策」入口。
+在 macOS 上再次打开 Hot Coffee 会显示已有实例的设置窗口。中英文设置面板均新增「隐私政策」入口。
+
+## 2.0.2 更新
+
+- **统一更名为 Hot Coffee**：应用、托盘菜单、安装包、文档和商店截图同步更新。
+- **Windows 更名升级迁移**：从 Caffeine 升级并保留偏好设置。
+- **GitHub 仓库更名**：下载、隐私政策和支持链接更新为新地址。
 
 ## 2.0 新功能
 
@@ -28,21 +36,21 @@
 
 ### Windows x86_64
 
-1. 从上表下载并运行 `Caffeine_2.0.1_windows_x86_64_setup.exe`。
+1. 从上表下载并运行 `Hot_Coffee_2.0.2_windows_x86_64_setup.exe`。
 2. 按向导完成当前用户安装。界面依赖 **Microsoft Edge WebView2**；如果系统尚未安装，安装包会下载运行时引导程序，此步骤需要联网。
-3. 从开始菜单启动 **Caffeine**，在任务栏通知区域找到咖啡杯图标，必要时展开隐藏图标；右键选择「设置…」打开面板。
+3. 从开始菜单启动应用，在任务栏通知区域找到咖啡杯图标，必要时展开隐藏图标；右键选择「设置…」打开面板。
 
 从 1.x 升级时，请先退出旧版托盘程序，再启动 2.0。
 
-v2.0.1 Windows 安装包**未签名**，系统可能提示发布者未知或信誉不足。[Smart App Control（智能应用控制）](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions)可能拦截它，且不支持为单个应用添加放行例外。
+v2.0.2 Windows 安装包**未签名**，系统可能提示发布者未知或信誉不足。[Smart App Control（智能应用控制）](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions)可能拦截它，且不支持为单个应用添加放行例外。
 
 ### macOS ARM64 / Apple Silicon
 
-1. 下载并打开 `Caffeine_2.0.1_macos_arm64.dmg`。
-2. 将 **Caffeine.app** 拖入「**应用程序**」，然后推出安装镜像。
-3. 从「应用程序」打开 **Caffeine**。启动后咖啡杯出现在菜单栏，不显示 Dock 图标，也不会自动打开设置窗口；右键单击咖啡杯，选择「设置…」打开面板。
+1. 下载并打开 `Hot_Coffee_2.0.2_macos_arm64.dmg`。
+2. 将应用拖入「**应用程序**」，然后推出安装镜像。
+3. 从「应用程序」打开应用。启动后咖啡杯出现在菜单栏，不显示 Dock 图标，也不会自动打开设置窗口；右键单击咖啡杯，选择「设置…」打开面板。
 
-v2.0.1 Mac 应用仅有 **ad-hoc 签名，尚未经过 Apple 公证**。如果系统因无法验证开发者而阻止打开，请先确认下载来源与校验和。若决定继续打开，先尝试启动一次，再到「**系统设置 → 隐私与安全性 → 仍要打开**」中确认；macOS 11 / 12 的对应入口是「**系统偏好设置 → 安全性与隐私 → 通用**」。详见 [Apple 官方打开说明](https://support.apple.com/zh-cn/102445)。
+v2.0.2 Mac 应用仅有 **ad-hoc 签名，尚未经过 Apple 公证**。如果系统因无法验证开发者而阻止打开，请先确认下载来源与校验和。若决定继续打开，先尝试启动一次，再到「**系统设置 → 隐私与安全性 → 仍要打开**」中确认；macOS 11 / 12 的对应入口是「**系统偏好设置 → 安全性与隐私 → 通用**」。详见 [Apple 官方打开说明](https://support.apple.com/zh-cn/102445)。
 
 ### 校验下载文件
 
@@ -51,13 +59,13 @@ v2.0.1 Mac 应用仅有 **ad-hoc 签名，尚未经过 Apple 公证**。如果�
 Windows PowerShell：
 
 ```powershell
-Get-FileHash .\Caffeine_2.0.1_windows_x86_64_setup.exe -Algorithm SHA256
+Get-FileHash .\Hot_Coffee_2.0.2_windows_x86_64_setup.exe -Algorithm SHA256
 ```
 
 macOS 终端：
 
 ```sh
-shasum -a 256 Caffeine_2.0.1_macos_arm64.dmg
+shasum -a 256 Hot_Coffee_2.0.2_macos_arm64.dmg
 ```
 
 ## 使用方式
@@ -73,6 +81,10 @@ shasum -a 256 Caffeine_2.0.1_macos_arm64.dmg
 - 默认语言跟随系统，也可选择中文或英文。记住语言与上次模式，每次重新启动仍从关闭状态开始。
 
 仅抑制空闲休眠；手动睡眠、合盖、低电量、过热、安全锁屏和设备管理策略仍由系统决定。屏幕常亮模式不会主动唤醒已经熄灭的显示器。
+
+## 更名与升级
+
+Hot Coffee 继续使用原应用标识和偏好目录。Windows 安装器会迁移旧的 Caffeine 安装并保留偏好；Mac 用户先退出旧版，再安装 `Hot Coffee.app`，确认正常后移除原 `Caffeine.app`。仓库已更名为 [cnlutong/Hot-Coffee](https://github.com/cnlutong/Hot-Coffee)，旧仓库链接会重定向；本机项目目录沿用原路径。保留的兼容性标识见[架构说明](docs/architecture-v2.md)。
 
 ## 2.0 开发与构建
 
@@ -102,9 +114,9 @@ npm run tauri -- build --target x86_64-pc-windows-msvc --bundles nsis
 npm run tauri -- build --target aarch64-apple-darwin --bundles app,dmg
 ```
 
-产物在 `src-tauri/target/<目标架构>/release/bundle/`。可对可执行文件运行 `--self-test`：它会短暂申请、切换并释放真实电源请求，不启动托盘，也不修改偏好设置。
+产物在 `src-tauri/target/<目标架构>/release/bundle/`。新构建使用 `Hot Coffee.app` 和 `hot-coffee.exe`；发布工作流将安装包命名为 `Hot_Coffee_<version>_windows_x86_64_setup.exe` 和 `Hot_Coffee_<version>_macos_arm64.dmg`。可对可执行文件运行 `--self-test`：它会短暂申请、切换并释放真实电源请求，不启动托盘，也不修改偏好设置。
 
-Windows 界面依赖 WebView2，安装包会在缺失时下载运行时引导程序，需要网络。建立发布者信任需要配置 Windows 受信任代码签名，以及 macOS Developer ID 签名和 Apple 公证；v2.0.1 的实际签名状态见上方安装说明。
+Windows 界面依赖 WebView2，安装包会在缺失时下载运行时引导程序，需要网络。建立发布者信任需要配置 Windows 受信任代码签名，以及 macOS Developer ID 签名和 Apple 公证；v2.0.2 的实际签名状态见上方安装说明。
 
 `.github/workflows/release-v2.yml` 在两个原生系统上分别测试和打包，包含架构检查与原生电源接口自检。手动运行可下载构建产物；推送 `v2.*` 标签时，两端均成功后创建含校验和的**草稿发布**。已有发布及其附件会被保留，正式发布是单独的手动步骤。
 
@@ -119,7 +131,7 @@ Windows 界面依赖 WebView2，安装包会在缺失时下载运行时引导程
 
 ## 下载
 
-从 [v1.1.0 发布页](https://github.com/cnlutong/Caffeine-Windows/releases/tag/v1.1.0)下载 `Caffeine.exe`。程序免安装且无需管理员权限。
+从 [v1.1.0 发布页](https://github.com/cnlutong/Hot-Coffee/releases/tag/v1.1.0)下载 `Caffeine.exe`。程序免安装且无需管理员权限。
 
 ### Windows 智能应用控制拦截
 
@@ -149,13 +161,13 @@ Windows 显示语言为中文时，程序界面自动使用中文；其他语言
 ## 从源码构建
 
 ```powershell
-dotnet publish .\source\Caffeine.csproj -c Release -o .\publish
+dotnet publish .\source\HotCoffee.csproj -c Release -o .\publish
 ```
 
 运行内置自检：
 
 ```powershell
-.\publish\Caffeine.exe --self-test
+.\publish\HotCoffee.exe --self-test
 if ($LASTEXITCODE -ne 0) { throw 'Self-test failed' }
 ```
 
@@ -169,13 +181,13 @@ if ($LASTEXITCODE -ne 0) { throw 'Self-test failed' }
 
 也可以通过 `-MakeAppxPath 'C:\路径\makeappx.exe'` 指定工具位置。脚本使用 `packaging/AppxManifest.xml` 中的商店身份，从项目版本生成四段包版本，自动构建、校验清单、解包检查并运行包内程序的自检；只有检查通过后才更新输出包。
 
-将 `artifacts/msix/Caffeine-Windows_1.1.0.0_x64.msix` 上传到 Partner Center 中 **Caffeine-Windows → 产品提交 → 包**。版本号随项目版本变化，旁边的 `.sha256` 文件用于校验，不需要上传。
+将 `artifacts/msix/Hot_Coffee_1.1.0.0_x64.msix` 上传到 Partner Center 已有的产品记录（原 **Caffeine-Windows**）中的「产品提交 → 包」。将商店显示名更新为 Hot Coffee，保留原商店身份。版本号随项目版本变化，旁边的 `.sha256` 文件用于校验，不需要上传。
 
 该包故意不做本地签名，用于商店提交，不能作为已受信任的安装包直接分发。审核通过后由 [Microsoft Store 签名](https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/msix/app-package-requirements)。本地打包检查不替代 Windows App Certification Kit 检测、安装/卸载和托盘交互测试，也不代表已通过商店审核。
 
 在提交选项的 `runFullTrust` 权限说明及审核备注中，可填写：
 
-> Caffeine-Windows is a WinForms desktop tray utility. It uses NotifyIcon for its tray menu and SetThreadExecutionState to prevent idle sleep only when enabled by the user. It runs as the current user without administrator privileges. On launch, look for the coffee-cup icon in the notification area (including hidden icons); no main window opens. Right-click the icon to choose a mode or Exit. It does not collect or transmit user data.
+> Hot Coffee is a WinForms desktop tray utility. It uses NotifyIcon for its tray menu and SetThreadExecutionState to prevent idle sleep only when enabled by the user. It runs as the current user without administrator privileges. On launch, look for the coffee-cup icon in the notification area (including hidden icons); no main window opens. Right-click the icon to choose a mode or Exit. It does not collect or transmit user data.
 
 ### 独立 EXE 发布签名
 
@@ -184,9 +196,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Self-test failed' }
 取得证书后，在能访问该证书私钥的环境中签名。下面的命令适用于证书已安装在当前用户的 `My` 证书存储区，并已将 Windows SDK 的 `signtool.exe` 加入 `PATH` 的情况。将两个占位值替换为证书指纹和证书提供商给出的 RFC 3161 时间戳地址；云签名服务使用其提供的签名命令。
 
 ```powershell
-signtool sign /sha1 "YOUR_CERTIFICATE_THUMBPRINT" /fd SHA256 /tr "YOUR_RFC3161_TIMESTAMP_URL" /td SHA256 .\publish\Caffeine.exe
+signtool sign /sha1 "YOUR_CERTIFICATE_THUMBPRINT" /fd SHA256 /tr "YOUR_RFC3161_TIMESTAMP_URL" /td SHA256 .\publish\HotCoffee.exe
 if ($LASTEXITCODE -ne 0) { throw 'Signing failed' }
-signtool verify /pa /all /tw .\publish\Caffeine.exe
+signtool verify /pa /all /tw .\publish\HotCoffee.exe
 if ($LASTEXITCODE -ne 0) { throw 'Signature verification failed' }
 ```
 

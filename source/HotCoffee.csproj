@@ -5,8 +5,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>Caffeine</AssemblyName>
-    <RootNamespace>Caffeine.Windows</RootNamespace>
+    <AssemblyName>HotCoffee</AssemblyName>
+    <RootNamespace>HotCoffee.Windows</RootNamespace>
+    <Product>Hot Coffee</Product>
+    <Title>Hot Coffee</Title>
     <Version>1.1.0</Version>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <SelfContained>true</SelfContained>

@@ -40,7 +40,7 @@ npm run tauri -- build --runner cargo-xwin --target x86_64-pc-windows-msvc --bun
 启用原生桌面集成测试（普通构建不包含测试命令）：
 
 ```sh
-CAFFEINE_TEST_CONFIG_DIR=/Volumes/dev1/codex/tmp/caffeine-v2/smoke \
+HOT_COFFEE_TEST_CONFIG_DIR=/Volumes/dev1/codex/tmp/hot-coffee-v2/smoke \
   cargo run --manifest-path src-tauri/Cargo.toml --features desktop-smoke -- --smoke-test
 ```
 
@@ -49,7 +49,7 @@ CAFFEINE_TEST_CONFIG_DIR=/Volumes/dev1/codex/tmp/caffeine-v2/smoke \
 离线发布界面可通过以下命令测试，使用先前 `npm run build` 生成的资源：
 
 ```sh
-CAFFEINE_TEST_CONFIG_DIR=/Volumes/dev1/codex/tmp/caffeine-v2/smoke-release \
+HOT_COFFEE_TEST_CONFIG_DIR=/Volumes/dev1/codex/tmp/hot-coffee-v2/smoke-release \
   cargo run --manifest-path src-tauri/Cargo.toml --release \
   --target aarch64-apple-darwin --features desktop-smoke,tauri/custom-protocol -- --smoke-test
 ```

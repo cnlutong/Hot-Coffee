@@ -50,7 +50,7 @@ mod tests {
     #[test]
     fn corrupt_settings_fall_back_without_losing_the_file() {
         let path =
-            std::env::temp_dir().join(format!("caffeine-corrupt-{}.json", std::process::id()));
+            std::env::temp_dir().join(format!("hot-coffee-corrupt-{}.json", std::process::id()));
         fs::write(&path, b"{broken").unwrap();
         let (settings, warning) = load(&path);
         assert_eq!(settings.last_active_mode, Mode::System);
@@ -61,7 +61,8 @@ mod tests {
 
     #[test]
     fn saving_replaces_an_existing_file() {
-        let path = std::env::temp_dir().join(format!("caffeine-save-{}.json", std::process::id()));
+        let path =
+            std::env::temp_dir().join(format!("hot-coffee-save-{}.json", std::process::id()));
         save(&path, &Settings::default()).unwrap();
         save(
             &path,

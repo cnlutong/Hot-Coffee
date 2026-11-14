@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-app=${1:?Pass the path to a Caffeine .app bundle}
-binary="$app/Contents/MacOS/caffeine"
+app=${1:?Pass the path to a Hot Coffee .app bundle}
+binary="$app/Contents/MacOS/hot-coffee"
 info="$app/Contents/Info.plist"
+test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleName' "$info")" = 'Hot Coffee'
+test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleDisplayName' "$info")" = 'Hot Coffee'
+test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$info")" = hot-coffee
 test "$(lipo -archs "$binary")" = arm64
 codesign --verify --deep --strict "$app"
 plutil -lint "$app/Contents/Resources/PrivacyInfo.xcprivacy"

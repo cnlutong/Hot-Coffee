@@ -97,7 +97,7 @@ fn quit_app(app: AppHandle) -> Result<(), String> {
 
 #[tauri::command]
 fn open_privacy_policy() -> Result<(), String> {
-    const URL: &str = "https://github.com/cnlutong/Caffeine-Windows/blob/main/docs/privacy.md";
+    const URL: &str = "https://github.com/cnlutong/Hot-Coffee/blob/main/docs/privacy.md";
 
     #[cfg(target_os = "macos")]
     let opened = {
@@ -138,8 +138,8 @@ fn labels(locale: &str) -> [&'static str; 6] {
             "仅防休眠",
             "屏幕常亮",
             "设置…",
-            "退出 Caffeine",
-            "Caffeine：",
+            "退出 Hot Coffee",
+            "Hot Coffee：",
         ]
     } else {
         [
@@ -147,8 +147,8 @@ fn labels(locale: &str) -> [&'static str; 6] {
             "Keep system awake",
             "Keep screen on",
             "Settings…",
-            "Quit Caffeine",
-            "Caffeine: ",
+            "Quit Hot Coffee",
+            "Hot Coffee: ",
         ]
     }
 }
@@ -300,7 +300,7 @@ pub fn self_test() -> Result<(), String> {
         controller.set_mode(mode)?;
     }
     println!(
-        "Caffeine {} native power self-test passed ({}/{})",
+        "Hot Coffee {} native power self-test passed ({}/{})",
         env!("CARGO_PKG_VERSION"),
         std::env::consts::OS,
         std::env::consts::ARCH
@@ -351,9 +351,9 @@ pub fn run() {
             let path = app.path().app_config_dir()?.join("settings.json");
             #[cfg(feature = "desktop-smoke")]
             let path = if smoke::enabled() {
-                std::env::var_os("CAFFEINE_TEST_CONFIG_DIR")
+                std::env::var_os("HOT_COFFEE_TEST_CONFIG_DIR")
                     .map(PathBuf::from)
-                    .unwrap_or_else(|| std::env::temp_dir().join("caffeine-desktop-smoke"))
+                    .unwrap_or_else(|| std::env::temp_dir().join("hot-coffee-desktop-smoke"))
                     .join("settings.json")
             } else {
                 path
@@ -412,7 +412,7 @@ pub fn run() {
             Ok(())
         })
         .build(tauri::generate_context!())
-        .expect("Could not start Caffeine");
+        .expect("Could not start Hot Coffee");
 
     app.run(|app, event| match event {
         #[cfg(target_os = "macos")]

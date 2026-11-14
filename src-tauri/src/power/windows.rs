@@ -44,7 +44,7 @@ impl PowerBackend for PowerRequest {
             self.request = None;
             return Ok(());
         }
-        let mut reason: Vec<u16> = "Caffeine: user enabled wake prevention\0"
+        let mut reason: Vec<u16> = "Hot Coffee: user enabled wake prevention\0"
             .encode_utf16()
             .collect();
         let context = REASON_CONTEXT {

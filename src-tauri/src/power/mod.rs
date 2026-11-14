@@ -9,7 +9,7 @@ pub use macos::PowerRequest;
 pub use windows::PowerRequest;
 
 #[cfg(not(any(target_os = "macos", target_os = "windows")))]
-compile_error!("Caffeine 2.0 supports Windows x86_64 and macOS aarch64 only.");
+compile_error!("Hot Coffee 2.0 supports Windows x86_64 and macOS aarch64 only.");
 
 #[cfg(any(
     all(target_os = "windows", not(target_arch = "x86_64")),
